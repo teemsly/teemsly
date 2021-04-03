@@ -1,0 +1,123 @@
+// Button base style
+.btn(base) {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  outline: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+  border-radius: 6px;
+
+  .btn-md();
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &.@{classPrefix}btn-active {
+    outline: 0;
+    background-image: none;
+  }
+}
+
+// Button full style
+.btn() {
+  .btn(base);
+
+  &.@{classPrefix}btn-disabled {
+    cursor: not-allowed;
+    opacity: .3;
+  }
+}
+
+// -------------------
+// Generate Button Color
+// -------------------
+@color-length: length(@spectrum);
+
+.generate-color-primary-btns(@i:@color-length) when (@i>0) {
+  .generate-color-primary-btns(@i - 1);
+  @name: extract(@spectrum, @i);
+  @backgroud-color: @@name;
+
+  &.@{classPrefix}btn-@{name} {
+    .button-primary-variant(@btn-primary-color, @backgroud-color);
+
+    // Defalut button spectrum button need set opacity.
+    &.@{classPrefix}btn-default.@{classPrefix}btn-disabled {
+      opacity: 0.3;
+    }
+  }
+}
+
+.generate-outline-btns(@i:@color-length) when (@i>0) {
+  .generate-outline-btns(@i - 1);
+  @name: extract(@spectrum, @i);
+  @base-color: @@name;
+  @border-color: @base-color;
+
+  &.@{classPrefix}btn-@{name} {
+    .button-outline-variant(@base-color, @border-color);
+  }
+}
+
+.generate-link-btns(@i:@color-length) when (@i>0) {
+  .generate-link-btns(@i - 1);
+  @name: extract(@spectrum, @i);
+  @base-color: @@name;
+
+  &.@{classPrefix}btn-@{name} {
+    .button-link-variant(@base-color)
+  }
+}
+
+.generate-subtle-btns(@i:@color-length) when (@i>0) {
+  .generate-subtle-btns(@i - 1);
+  @name: extract(@spectrum, @i);
+  @base-color: @@name;
+
+  &.@{classPrefix}btn-@{name} {
+    .button-subtle-variant(@base-color, true)
+  }
+}
+// -------------------
+// Button sizes
+// -------------------
+.btn-size(@vertical-padding, @horizontal-padding, @line-height, @font-size, @border-radius) {
+  padding: @vertical-padding @horizontal-padding;
+  line-height: @line-height;
+  font-size: @font-size;
+  border-radius: @border-radius;
+}
+
+.btn-xs() {
+  .btn-size(@padding-extra-small-vertical, @padding-extra-small-horizontal, @line-height-extra-small, @font-size-extra-small, @border-radius-base)
+}
+
+.btn-sm() {
+  .btn-size(@padding-small-vertical, @padding-small-horizontal, @line-height-small, @font-size-small, @border-radius-base)
+}
+
+.btn-md() {
+  .btn-size(@padding-base-vertical, @padding-base-horizontal, @line-height-base, @font-size-base, @border-radius-base)
+}
+
+.btn-lg() {
+  .btn-size(@padding-large-vertical, @padding-large-horizontal, @line-height-large, @font-size-large, @border-radius-base)
+}
+
+.btn-xl() {
+  .btn-size(@padding-large-vertical, @padding-large-horizontal, @line-height-large, @font-size-large, @border-radius-base)
+}
+
+.btn-transition() {
+  transition: 0.2s;
+  transition-property: background;
+}
+.btn-block() {
+  width: 100%;
+}

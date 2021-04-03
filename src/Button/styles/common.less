@@ -1,0 +1,108 @@
+@import '../../styles/common.less';
+@import './variables.less';
+@import './mixin.less';
+
+// This common file will generate the styles
+// that will use in the front.
+
+.@{classPrefix}btn {
+  .btn();
+  .btn-transition();
+}
+
+// ---------------------------
+// Button styles
+// ---------------------------
+.@{classPrefix}btn-default {
+  color: @btn-default-color;
+  background-color: @btn-default-bg;
+
+  &:hover {
+    color: @btn-default-hover-color;
+    background-color: @btn-default-hover-bg;
+  }
+
+  &:focus {
+    background-color: @btn-default-focus-bg;
+  }
+
+  &:active {
+    background-color: @btn-default-active-bg;
+  }
+
+  &.@{classPrefix}btn-disabled {
+    color: @btn-default-disabled-color;
+    background-color: @btn-default-disabled-bg;
+  }
+
+  .generate-color-primary-btns();
+}
+.@{classPrefix}btn-primary {
+  .button-primary-variant(@btn-primary-color, @btn-primary-bg);
+}
+.@{classPrefix}btn-subtle {
+  .btn-transition();
+  .generate-subtle-btns();
+
+  color: @btn-subtle-color;
+  background-color: transparent;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: @btn-subtle-hover-bg;
+  }
+
+  &.@{classPrefix}btn-disabled {
+    background-color: transparent;
+  }
+}
+.@{classPrefix}btn-outline {
+  color: @btn-outline-color;
+  border: 1px solid @btn-outline-border-color;
+  background: transparent;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: @btn-outline-hover-color;
+    border-color: @btn-outline-hover-border-color;
+  }
+
+  .generate-outline-btns()
+}
+.@{classPrefix}btn-link {
+  .generate-link-btns();
+}
+
+// ---------------------------
+// Button loading
+// ---------------------------
+.@{classPrefix}btn-loading {
+  color: #fff
+}
+// ---------------------------
+// Button size
+// ---------------------------
+.@{classPrefix}btn-xs {
+  .btn-xs();
+}
+.@{classPrefix}btn-sm {
+  .btn-sm();
+}
+.@{classPrefix}btn-md {
+  .btn-md();
+}
+.@{classPrefix}btn-lg {
+  .btn-lg();
+}
+.@{classPrefix}btn-xl {
+  .btn-xl();
+}
+
+// ---------------------------
+// Button block
+// ---------------------------
+.@{classPrefix}btn-block {
+  .btn-block()
+}

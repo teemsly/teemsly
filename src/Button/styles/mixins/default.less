@@ -1,0 +1,118 @@
+// -----------------------
+// Button
+// -----------------------
+.button-primary-variant(@font-base-color; @primary-color; @calc-readable-color: false) {
+  @color-dark: color(~`palette('@{primary-color}', 600) `);
+  @color-darker: color(~`palette('@{primary-color}', 700) `);
+  @color-even-darker: color(~`palette('@{primary-color}', 800) `);
+  @readable-color: color(~`calcFontColor('@{color-darker}') `);
+  @font-color: if(boolean(@calc-readable-color), @readable-color, @font-base-color);
+  
+  color: @font-color;
+  background-color: @primary-color;
+
+  &:hover {
+    color: @font-color;
+  }
+
+  &:not(.@{classPrefix}btn-disabled):hover {
+    background-color: @color-dark;
+  }
+
+  &:focus {
+    background-color: @color-darker;
+  }
+
+  &:active {
+    background-color: @color-darker;
+  }
+
+  &.@{classPrefix}btn-disabled {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: @primary-color;
+    }
+  }
+}
+
+.button-outline-variant(@font-color; @border-color) {
+  @color-dark: color(~`palette('@{border-color}', 600) `);
+  @color-darker: color(~`palette('@{border-color}', 700) `);
+  @color-even-darker: color(~`palette('@{border-color}', 800) `);
+  
+  color: @font-color;
+  background-color: transparent;
+  border: 1px solid @border-color;
+
+  &:hover {
+    color: @color-dark;
+  }
+
+  &:not(.@{classPrefix}btn-disabled):hover {
+    border-color: @color-dark;
+  }
+
+  &:focus {
+    border-color: @color-darker;
+  }
+
+  &:active {
+    border-color: @color-darker;
+  }
+}
+
+.button-link-variant(@font-color) {
+  @color-dark: color(~`palette('@{font-color}', 600) `);
+  @color-darker: color(~`palette('@{font-color}', 700) `);
+  @color-even-darker: color(~`palette('@{font-color}', 800) `);
+  
+  color: @font-color;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    color: @color-dark;
+  }
+
+  &:not(.@{classPrefix}btn-disabled):hover {
+    color: @color-dark;
+  }
+
+  &:focus {
+    color: @color-darker;
+  }
+
+  &:active {
+    color: @color-darker;
+  }
+}
+
+.button-subtle-variant(@font-base-color; @calc-readable-color: false) {
+  @color-dark: color(~`palette('@{font-base-color}', 300) `);
+  @color-darker: color(~`palette('@{font-base-color}', 700) `);
+  @color-even-darker: color(~`palette('@{font-base-color}', 800) `);
+  @readable-color: color(~`calcFontColor('@{color-darker}') `);
+  @font-color: if(boolean(@calc-readable-color), @readable-color, @font-base-color);
+
+  color: @font-base-color;
+  background-color: transparent;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: @font-base-color;
+    background-color: transparent;
+  }
+
+  &.@{classPrefix}btn-disabled {
+    background: transparent;
+  }
+
+  &:not(.@{classPrefix}btn-disabled):hover,
+  &:not(.@{classPrefix}btn-disabled):focus {
+    color: @font-color;
+    background-color: @color-dark;
+  }
+
+}
