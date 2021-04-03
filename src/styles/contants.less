@@ -1,0 +1,65 @@
+@import './mixins/palettes.less';
+@import './mixins/calc-font-color.less';
+
+/* 
+ * In this contants.less
+ * Fill with global variables, such as class prefix, colors, and text or link color
+ */
+
+
+// Class perfix
+@classPrefix: ts-;
+// Control enable ie polyfill
+@ie-polyfill: true;
+// reset styles
+@reset-import: true;
+
+// Grey color
+@B000: #fff;
+@B050: #f7f7fa;
+@B100: #f2f2f5;
+@B200: #e5e5ea;
+@B300: #d9d9d9;
+@B400: #c5c6c7;
+@B500: #a6a6a6;
+@B600: #8e8e93;
+@B700: #7a7a7a;
+@B800: #575757;
+@B900: #272c36;
+
+//** Pallet
+@base-color: #3498ff;
+@H050: color(~`palette('@{base-color}', 50)`);
+@H100: color(~`palette('@{base-color}', 100)`);
+@H200: color(~`palette('@{base-color}', 200)`);
+@H300: color(~`palette('@{base-color}', 300)`);
+@H400: color(~`palette('@{base-color}', 400)`);
+@H500: @base-color;
+@H600: color(~`palette('@{base-color}', 600)`);
+@H700: color(~`palette('@{base-color}', 700)`);
+@H800: color(~`palette('@{base-color}', 800)`);
+@H900: color(~`palette('@{base-color}', 900)`);
+
+// Colors
+@red: #f44336;
+@orange: #ff9800;
+@yellow: #ffca28;
+@green: #4caf50;
+@cyan: #00bcd4;
+@blue: #2196f3;
+@violet: #673ab7;
+@spectrum: red, orange, yellow, green, cyan, blue, violet;
+
+// Status Color
+@success: #4caf50;
+@error: #f44336;
+@info: #2196f3;
+@warning: #ffb300;
+
+// Global textual link colors.
+@link-color: blue;
+@link-hover-color: blue;
+@link-active-color: blue;
+
+// Global border properties
+@border-radius: 4px;
