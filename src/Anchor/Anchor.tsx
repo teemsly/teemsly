@@ -5,15 +5,15 @@ export interface AnchorProps extends CommonProps {
   /** The specified path of the url */
   href?: string;
   /** The custom element for this component */
-  componentClass?: React.ElementType,
+  componentClass?: React.ElementType;
   /** The main content for component */
-  children?: React.ReactNode,
+  children?: React.ReactNode;
   /** On click action */
-  onClick?: (e: SyntheticEvent) => void
+  onClick?: (e: SyntheticEvent) => void;
 }
 
-const Anchor = (props: AnchorProps) => {
-  const {componentClass: Component = 'a', children, ...rest} = props
+const Anchor: React.FC<AnchorProps> = (props: AnchorProps) => {
+  const { componentClass: Component = "a", children, ...rest } = props;
   return <Component {...rest}>{children}</Component>;
 };
 
