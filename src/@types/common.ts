@@ -11,6 +11,10 @@ export interface CommonProps {
   [key: string]: any
 }
 
+export interface WithComponentAs<As extends React.ElementType | string = React.ElementType> extends CommonProps {
+  as: As
+}
+
 export declare namespace TypeAttributes {
   type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }
