@@ -1,0 +1,58 @@
+.avatar-base() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .avatar();
+}
+
+.avatar-photo-base() {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  vertical-align: top;
+  .avatar-photo();
+}
+
+.avatar-circle() {
+  border-radius: 50% !important;
+}
+
+.avatar-size(@avatar-size; @avatar-font-size; @border-radius) {
+  font-size: @avatar-font-size;
+  width: @avatar-size;
+  height: @avatar-size;
+  border-radius: @border-radius;
+}
+
+@avatar-color-length: length(@spectrum);
+.generate-avatar-colors(@i:@avatar-color-length) when (@i>0) {
+  .generate-avatar-colors(@i - 1);
+  @name: extract(@spectrum, @i);
+  @background-color: @@name;
+  
+  &.@{classPrefix}avatar-@{name} {
+    .avatar-colors(@background-color);
+  }
+}
+
+
+.avatar-xs() {
+  .avatar-size(@avatar-size-xs, @avatar-font-size-xs, @avatar-berder-radius-xs);
+}
+
+.avatar-sm() {
+  .avatar-size(@avatar-size-sm, @avatar-font-size-sm, @avatar-berder-radius-sm);
+}
+
+.avatar-md() {
+  .avatar-size(@avatar-size-md, @avatar-font-size-md, @avatar-berder-radius-md);
+}
+
+.avatar-lg() {
+  .avatar-size(@avatar-size-lg, @avatar-font-size-lg, @avatar-berder-radius-lg);
+}
+
+.avatar-xl() {
+  .avatar-size(@avatar-size-xl, @avatar-font-size-xl, @avatar-berder-radius-xl);
+}

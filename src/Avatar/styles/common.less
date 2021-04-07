@@ -1,0 +1,44 @@
+@import './variable.less';
+@import './mixin.less';
+
+// Default style of the avatar
+.@{classPrefix}avatar {
+  .avatar-base(); 
+  .generate-avatar-colors();
+}
+
+// Avatar photo
+.@{classPrefix}avatar-photo {
+  .avatar-photo-base();
+}
+
+.@{classPrefix}avatar-circle {
+  .avatar-circle(); 
+}
+
+// Avatar size
+.@{classPrefix}avatar-xs {
+  .avatar-xs();
+  & > img {
+    .avatar-xs();
+  }
+}
+
+.@{classPrefix}avatar-sm {
+  .avatar-sm();
+  & > img {
+    .avatar-sm();
+  }
+}
+
+.@{classPrefix}avatar-md {
+  .avatar-md();
+}
+
+.@{classPrefix}avatar-lg {
+  .avatar-lg();
+}
+
+.@{classPrefix}avatar-xl {
+  .avatar-xl();
+}
