@@ -2,6 +2,7 @@
 export { default as Anchor, AnchorProps } from "./Anchor";
 export { default as Button, ButtonProps } from "./Button";
 export { default as Header, HeaderProps } from "./Header";
+export { default as Nav, NavProps } from "./Nav";
 export { default as Topbar, TopbarProps } from "./Topbar";
 
 // Layouts
