@@ -1,0 +1,66 @@
+@import './variable.less';
+@import './minxin.less';
+
+// Base style of the navigation
+.@{classPrefix}nav {
+  .nav-base();
+}
+
+.@{classPrefix}nav-horizontal {
+  .nav-horizontal();
+}
+
+.@{classPrefix}nav-vertical {
+  .nav-vertical();
+}
+
+.@{classPrefix}nav-default {
+  .generate-nav-default();
+}
+
+.@{classPrefix}nav-subtle {
+  .generate-nav-subtle();
+  
+  &.@{classPrefix}nav-horizontal {
+    border-bottom: 1px solid @B400;
+      
+    & .@{classPrefix}nav-item {  
+      &:not(&:first-child) {
+        margin-left: 24px;
+      }
+
+      & .@{classPrefix}nav-item-option {
+        &::after {
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 2px;
+        }
+      }
+    }
+
+  } 
+
+  &.@{classPrefix}nav-vertical {
+    border-right: 1px solid @B400;
+
+    & .@{classPrefix}nav-item {  
+      width: 100%;
+      margin-right: 24px;
+      
+      &:not(&:first-child) {
+        margin-top: 6px;
+      }
+  
+      & .@{classPrefix}nav-item-option {
+        width: 100%;
+        &::after {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 2px;
+        }
+      }
+    }
+  } 
+}
