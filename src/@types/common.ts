@@ -17,4 +17,5 @@ export interface WithComponentAs<As extends React.ElementType | string = React.E
 
 export declare namespace TypeAttributes {
   type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+  type Color = 'red' | 'green' | 'yellow' | 'orange' | 'blue' | 'violet' | 'cyan'
 }
