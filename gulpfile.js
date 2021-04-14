@@ -21,7 +21,13 @@ const RESOURCE_EXTENSION = [
   "./src/**/*.ts",
   "!./src/**/*.stories.tsx",
   "!./src/**/*.stories.ts",
+  "!./src/utils/**/*.tsx",
+  "!./src/utils/**/*.ts",
+  "!./src/@types/**/*.ts",
+  "!./src/@types/**/*.tsx",
 ];
+
+const LESS_EXTENSION = ["./src/**/*.less"];
 
 // clean the target dir
 function clean(done) {
@@ -106,7 +112,25 @@ function watch() {
   });
 }
 
+function watchLess() {
+  const lessWatcher = gulp.watch(LESS_EXTENSION);
+  var theme = "default";
+  lessWatcher.on("change", (filePath, stats) => {
+    console.log("File " + filePath + " was changed, build styles...");
+
+    return gulp
+      .src(`${STYLES_SRC_DIR}/themes/${theme}/index.less`)
+      .pipe(sourcemaps.init())
+      .pipe(less({ javascriptEnabled: true }))
+      .pipe(postcss([require("autoprefixer")]))
+      .pipe(sourcemaps.write("./"))
+      .pipe(rename(`teemsly-${theme}.css`))
+      .pipe(gulp.dest(`${STYLE_DIST_DIR}`));
+  });
+}
+
 exports.buildStyle = gulp.series(clean, ...buildLess(), ...buildCSS());
+exports.buildLess = gulp.series(watchLess);
 exports.dev = gulp.series(clean, buildLib, createDeclarationFile, watch);
 exports.build = gulp.series(
   clean,
