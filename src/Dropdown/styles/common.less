@@ -1,0 +1,49 @@
+@import './variable.less';
+@import './mixin.less';
+
+// base style of dropdown
+.@{classPrefix}dropdown {
+  .dropdown();
+}
+
+// Dropdown menu style
+.@{classPrefix}dropdown-menu {
+  .dropdown-menu();
+
+  &.@{classPrefix}dropdown-menu-open {
+    display: block;
+  }
+
+  .dropdown-menu-item();
+
+  &.@{classPrefix}dropdown-menu-top-start {
+    .dropdown-position-top-start();
+  }
+  &.@{classPrefix}dropdown-menu-top-end {
+    .dropdown-position-top-end();
+  }
+  &.@{classPrefix}dropdown-menu-right-start {
+    .dropdown-position-right-start();
+  }
+  &.@{classPrefix}dropdown-menu-right-end {
+    .dropdown-position-right-end();
+  }
+  &.@{classPrefix}dropdown-menu-bottom-start {
+    .dropdown-position-bottom-start();
+  }
+  &.@{classPrefix}dropdown-menu-bottom-end {
+    .dropdown-position-bottom-end();
+  }
+  &.@{classPrefix}dropdown-menu-left-start {
+    .dropdown-position-left-start();
+  }
+  &.@{classPrefix}dropdown-menu-left-end {
+    .dropdown-position-left-end();
+  } 
+}
+
+// Dropdown Toggle style
+.@{classPrefix}dropdown-toggle {
+  .dropdown-toggle();
+}
+
