@@ -1,6 +1,7 @@
 // Base
 export { default as Anchor, AnchorProps } from "./Anchor";
 export { default as Button, ButtonProps } from "./Button";
+export { default as Card, CardProps } from "./Card";
 export { default as Content } from "./Content";
 export { default as Dropdown, DropdownProps } from "./Dropdown";
 export { default as Header, HeaderProps } from "./Header";

@@ -1,0 +1,71 @@
+// Base style of card
+.card-base(base) {
+  .card-base-style();
+  max-width: 450px;
+
+  & h1 {
+    font-size: 18px;
+    line-height: normal;
+    margin-bottom: 12px;
+  }
+
+  &.@{classPrefix}card-shadow {
+    .card-shadow();
+  }
+}
+
+.card-image() {
+  width: 100%;
+  & img {
+    width: 100%;
+  }
+}
+
+.set-card-padding(@card-padding) {
+  .@{classPrefix}card-body {
+    padding: @card-padding;
+  }
+  .@{classPrefix}card-footer {
+    padding: @card-padding;
+    border-top: 1px solid @B100;
+  }  
+}
+
+.card-xs() {
+  .set-card-padding(@card-xs-padding);
+  .card-border(@card-xs-border-radius);
+}
+.card-sm() {
+  .set-card-padding(@card-sm-padding);
+  .card-border(@card-sm-border-radius);
+}
+.card-md() {
+  .set-card-padding(@card-md-padding);
+  .card-border(@card-md-border-radius);
+}
+.card-lg() {
+  .set-card-padding(@card-lg-padding);
+  .card-border(@card-lg-border-radius);
+}
+.card-xl() {
+  .set-card-padding(@card-xl-padding);
+  .card-border(@card-xl-border-radius);
+}
+
+.card-border(@border-radius) {
+  &.@{classPrefix}card-border {
+    border-radius: @border-radius;
+  }
+
+  .@{classPrefix}card-image {
+    border-radius: @border-radius;
+    & img {
+      border-top-left-radius: @border-radius;
+      border-top-right-radius: @border-radius;
+    }
+  }
+}
+
+.card-shadow() {
+  .card-box-shadow-stlye();
+}
