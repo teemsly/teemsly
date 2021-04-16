@@ -21,10 +21,6 @@ const RESOURCE_EXTENSION = [
   "./src/**/*.ts",
   "!./src/**/*.stories.tsx",
   "!./src/**/*.stories.ts",
-  "!./src/utils/**/*.tsx",
-  "!./src/utils/**/*.ts",
-  "!./src/@types/**/*.ts",
-  "!./src/@types/**/*.tsx",
 ];
 
 const LESS_EXTENSION = ["./src/**/*.less"];
@@ -93,7 +89,6 @@ function createDeclarationFile() {
   return gulp
     .src(RESOURCE_EXTENSION)
     .pipe(tsProject())
-    .pipe(gulp.dest(LIB_DIR))
     .pipe(gulp.dest(ESM_DIR));
 }
 
