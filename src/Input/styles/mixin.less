@@ -1,0 +1,37 @@
+// Base style of input
+.input-base() {
+  .input-base-style();
+  font-family: @font-family-base;
+  font-weight: 400;
+  border-radius: 6px;
+  line-height: 22px;
+  font-size: 14px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.input-has-error-base() {
+  .input-has-error();
+}
+
+.set-input-size(@font-size, @padding, @height) {
+  height: @height;
+  font-size: @font-size;
+  padding: @padding;
+}
+.input-size-xs() {
+  .set-input-size(@input-size-xs-font-size, @input-size-xs-padding, @input-size-xs-height);
+}
+.input-size-sm() {
+  .set-input-size(@input-size-sm-font-size, @input-size-sm-padding, @input-size-sm-height)
+}
+.input-size-md() {
+  .set-input-size(@input-size-md-font-size, @input-size-md-padding, @input-size-md-height)
+}
+.input-size-lg() {
+  .set-input-size(@input-size-lg-font-size, @input-size-lg-padding, @input-size-lg-height)
+}
+.input-size-xl() {
+  .set-input-size(@input-size-xl-font-size, @input-size-xl-padding, @input-size-xl-height)
+}

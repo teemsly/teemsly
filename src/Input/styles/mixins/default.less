@@ -1,0 +1,27 @@
+.input-base-style() {
+  border: 1px solid;
+  background-color: @B000;
+  border-color: @input-default-border-color;
+
+  &:focus {
+    border-color: @input-defualt-focus-border-color;
+    box-shadow: @input-default-shadow;
+  }
+
+  &::placeholder {
+    color: @B500;
+  }
+}
+
+.input-has-error() {
+  border-color: @red;
+
+  &:focus {
+    border-color: @red;
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: lighten(@red, 10%);
+  }
+}
