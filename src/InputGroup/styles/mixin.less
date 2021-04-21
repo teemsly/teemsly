@@ -1,0 +1,78 @@
+// base style of input grouop
+.input-group-base() {
+  .input-base-style();
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  padding: 4px;
+  font-size: 13px;
+
+  .@{classPrefix}input {
+    margin: 0 6px;
+    border: none;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .@{classPrefix}input-group-addon {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .@{classPrefix}input-group-addon:first-child {
+    padding-left: 12px;
+    padding-right: 6px;
+  }
+
+  .@{classPrefix}input-group-addon:last-child {
+    padding-right: 12px;
+    padding-left: 6px;
+  }
+}
+
+.set-input-group-size(@font-size, @padding-horizontal, @padding-vertical, @height) {
+  height: @height;
+  font-size: @font-size;
+
+  .@{classPrefix}input { 
+    font-size: @font-size;
+    margin: 0 @padding-horizontal;
+  }
+
+  .@{classPrefix}input-group-addon {
+    height: @height;  
+  }
+
+  .@{classPrefix}input-group-addon:first-child {
+    padding-left: @padding-horizontal * 2;
+    padding-right: @padding-horizontal;
+  }
+
+  .@{classPrefix}input-group-addon:last-child {
+    padding-right: @padding-horizontal * 2;
+    padding-left: @padding-horizontal;
+  }
+}
+
+.input-gorup-xs() {
+  .set-input-group-size(@input-group-size-xs-font-size, @input-group-size-xs-padding-horizontal, @input-group-size-xs-padding-horizontal, @input-group-size-xs-height)
+}
+
+.input-gorup-sm() {
+  .set-input-group-size(@input-group-size-sm-font-size, @input-group-size-sm-padding-horizontal, @input-group-size-sm-padding-horizontal, @input-group-size-sm-height)
+}
+
+.input-gorup-md() {
+  .set-input-group-size(@input-group-size-md-font-size, @input-group-size-md-padding-horizontal, @input-group-size-md-padding-horizontal, @input-group-size-md-height)
+}
+
+.input-gorup-lg() {
+  .set-input-group-size(@input-group-size-lg-font-size, @input-group-size-lg-padding-horizontal, @input-group-size-lg-padding-horizontal, @input-group-size-lg-height)
+}
+
+.input-gorup-xl() {
+  .set-input-group-size(@input-group-size-xl-font-size, @input-group-size-xl-padding-horizontal, @input-group-size-xl-padding-horizontal, @input-group-size-xl-height)
+}
