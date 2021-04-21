@@ -16,10 +16,12 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
     componentClass: Component = "input",
     classPrefix = "input",
     className,
-    size = "md",
     hasError = false,
+    size,
     ...rest
   } = props;
+
+  const ref = React.useRef();
 
   const { merge, withClassPrefix } = useClassNames(classPrefix);
   const classes = merge(
@@ -27,12 +29,10 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
     withClassPrefix(size, { "has-error": hasError })
   );
 
-  return <Component className={classes} {...rest} />;
+  return <Component ref={ref} className={classes} {...rest} />;
 };
 
 Input.defaultProps = {
-  size: "md",
-  floating: false,
   hasError: false,
 };
 
