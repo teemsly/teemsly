@@ -1,0 +1,57 @@
+@import './mixin.less';
+
+// base style form 
+.@{classPrefix}form {
+  .form-base-style();
+}
+
+.@{classPrefix}form-horizontal {
+  flex-direction: row;
+  .@{classPrefix}form-group {
+    margin-right: 12px;
+  }
+}
+
+.@{classPrefix}form-vertical {
+  flex-direction: column;
+  .@{classPrefix}form-group {
+    flex-direction: column;
+  }
+}
+
+.@{classPrefix}form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 12px;
+
+  &.@{classPrefix}form-group-inline {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .@{classPrefix}form-label {
+      margin-right: 24px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.@{classPrefix}form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.@{classPrefix}error-field {
+  .form-error-field();
+  display: none;
+  font-size: 12px;
+}
+
+.@{classPrefix}form-group-has-error {
+
+  .@{classPrefix}error-field {
+    display: block;
+  }
+}
