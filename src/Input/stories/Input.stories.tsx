@@ -26,7 +26,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<InputProps> = (args) => <Input {...args} />;
+const Template: Story<InputProps> = (args) => <Input {...args} hasError />;
 
 export const Default = Template.bind({});
 Default.args = {

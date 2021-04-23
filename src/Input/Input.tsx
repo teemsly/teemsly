@@ -32,8 +32,4 @@ const Input: React.FC<InputProps> = (props: InputProps) => {
   return <Component ref={ref} className={classes} {...rest} />;
 };
 
-Input.defaultProps = {
-  hasError: false,
-};
-
 export default Input;
