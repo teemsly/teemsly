@@ -15,3 +15,4 @@ export { default as InputGroup, InputGroupProps } from "./InputGroup";
 export { default as Page, PageProps, PageContext } from "./Page";
 export { default as Sidebar, SidebarProps } from "./Sidebar";
 export { default as TopNavigation } from "./TopNavigation";
+export { default as Container, ContainerProps } from "./Container";
