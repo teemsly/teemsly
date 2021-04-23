@@ -7,6 +7,7 @@ export { default as Dropdown, DropdownProps } from "./Dropdown";
 export { default as Header, HeaderProps } from "./Header";
 export { default as Nav, NavProps } from "./Nav";
 export { default as Topbar, TopbarProps } from "./Topbar";
+export { default as Form, FormProps } from "./Form";
 export { default as Input, InputProps } from "./Input";
 export { default as InputGroup, InputGroupProps } from "./InputGroup";
 
