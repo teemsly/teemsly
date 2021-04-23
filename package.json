@@ -1,6 +1,6 @@
 {
   "name": "teemsly",
-  "version": "1.0.3",
+  "version": "1.0.3-beta.0",
   "description": "Teemsly is simple and customizable component library to build faster your react application.",
   "main": "lib/index.js",
   "typings": "es/index.js",
