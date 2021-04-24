@@ -10,6 +10,7 @@ export { default as Topbar, TopbarProps } from "./Topbar";
 export { default as Form, FormProps } from "./Form";
 export { default as Input, InputProps } from "./Input";
 export { default as InputGroup, InputGroupProps } from "./InputGroup";
+export { default as Tooltip, TooltipProps } from "./Tooltip";
 
 // Layouts
 export { default as Page, PageProps, PageContext } from "./Page";

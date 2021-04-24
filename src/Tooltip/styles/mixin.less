@@ -1,0 +1,9 @@
+.arrow-base-style(@rules) {
+  &::after {
+    content: " ";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    @rules();
+  }
+}
