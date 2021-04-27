@@ -11,6 +11,7 @@ export { default as Form, FormProps } from "./Form";
 export { default as Input, InputProps } from "./Input";
 export { default as InputGroup, InputGroupProps } from "./InputGroup";
 export { default as Tooltip, TooltipProps } from "./Tooltip";
+export { default as SidebarNav, SidebarNavProps } from "./SidebarNav";
 
 // Layouts
 export { default as Page, PageProps, PageContext } from "./Page";
