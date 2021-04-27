@@ -1,5 +1,6 @@
 // Base
 export { default as Anchor, AnchorProps } from "./Anchor";
+export { default as Avatar, AvatarProps } from "./Avatar";
 export { default as Button, ButtonProps } from "./Button";
 export { default as Card, CardProps } from "./Card";
 export { default as Content } from "./Content";
