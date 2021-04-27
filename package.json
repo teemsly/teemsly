@@ -1,13 +1,14 @@
 {
   "name": "teemsly",
-  "version": "1.0.3-beta.3",
+  "version": "1.0.3-beta.6",
   "description": "Teemsly is simple and customizable component library to build faster your react application.",
   "main": "lib/index.js",
   "typings": "es/index.js",
   "module": "es/index.js",
   "source": "src/index.tsx",
   "directories": {
-    "lib": "lib/"
+    "lib": "lib/",
+    "es": "es/"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -80,8 +81,7 @@
     "webpack-bundle-analyzer": "^4.4.0"
   },
   "dependencies": {
-    "@types/classnames": "^2.2.11",
-    "classnames": "^2.2.6",
+    "classnames": "^2.3.1",
     "dom-lib": "^2.0.3"
   },
   "browserslist": [
