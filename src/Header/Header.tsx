@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CommonProps } from "../@types/common";
 import { useClassNames } from "../utils";
 import MainHeader from "./MainHeader";
 import HeaderIcon from "./HeaderIcon";
 import HeaderExtra from "./HeaderExtra";
+import { PageContext } from "../Page";
+import SidebarExpanderIcon from "./SidebarExpanderIcon";
 
 export interface HeaderProps extends CommonProps {
   /** Navigation on the header */
   navigation?: React.ReactNode;
   /** Header icon */
   icon?: React.ReactNode;
+  /** Header icon */
+  headerIcon?: React.ReactNode;
   /** The title of header */
   title?: string;
   /** Custom render of the title */
@@ -26,10 +30,18 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     title,
     renderTitle,
     navigation,
+    headerIcon,
+    extraElement,
   } = props;
 
-  const { merge, withClassPrefix } = useClassNames(classPrefix);
+  const { setMinimizedSidebar } = useContext(PageContext);
+
+  const { merge, withClassPrefix, prefix } = useClassNames(classPrefix);
   const classes = merge(className, withClassPrefix({}));
+
+  const handleCollapseSidebar = () => {
+    setMinimizedSidebar?.(false);
+  };
 
   let mainHeaderProps = {
     title,
@@ -37,11 +49,27 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     renderTitle,
   };
 
+  let headerIconElement: React.ReactNode;
+  if (headerIcon) {
+    headerIconElement = <HeaderIcon>{headerIcon}</HeaderIcon>;
+  }
+
+  let headerExtraElement: React.ReactNode;
+  if (extraElement) {
+    headerExtraElement = <HeaderExtra>{extraElement}</HeaderExtra>;
+  }
+
   return (
     <Component className={classes}>
-      <HeaderIcon>Icon Header</HeaderIcon>
+      <div
+        className={prefix("sidebar-expander")}
+        onClick={() => handleCollapseSidebar()}
+      >
+        <SidebarExpanderIcon height="20" width="20" />
+      </div>
+      {headerIconElement}
       <MainHeader {...mainHeaderProps} />
-      <HeaderExtra>header extra</HeaderExtra>
+      {headerExtraElement}
     </Component>
   );
 };

@@ -8,6 +8,7 @@ export const PageContext = React.createContext<PageContextValue>({});
 
 interface PageContextValue {
   setHasSidebar?: (value: boolean) => void;
+  setMinimizedSidebar?: (value: boolean) => void;
 }
 
 export interface PageProps
@@ -29,16 +30,20 @@ const Page: React.FC<PageProps> = (props: PageProps) => {
   } = props;
 
   const [hasSidebar, setHasSidebar] = useState<boolean>(false);
+  const [minimizedSidebar, setMinimizedSidebar] = useState<boolean>(false);
 
   const { withClassPrefix, merge } = useClassNames(classPrefix);
 
   const classnames = merge(
     className,
-    withClassPrefix({ "has-sidebar": hasSidebar })
+    withClassPrefix({
+      "has-sidebar": hasSidebar,
+      "sidebar-minimized": minimizedSidebar,
+    })
   );
 
   return (
-    <PageContext.Provider value={{ setHasSidebar }}>
+    <PageContext.Provider value={{ setHasSidebar, setMinimizedSidebar }}>
       <Component className={classnames} {...rest}>
         <PageMain>
           <PageMainLayer>{children}</PageMainLayer>

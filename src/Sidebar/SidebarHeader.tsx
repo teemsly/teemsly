@@ -1,6 +1,7 @@
 import React from "react";
 import { CommonProps } from "../@types/common";
 import { useClassNames } from "../utils";
+import ExpanderIcon from "./SidebarExpanderIcon";
 
 export interface SidebarHeaderProps extends CommonProps {
   /** The main content of the component */
@@ -9,20 +10,47 @@ export interface SidebarHeaderProps extends CommonProps {
   classPrefix?: string;
   /** Use custom element for this component */
   componentClass?: React.ElementType;
+  /** Show Expander component  on the sidebar */
+  expander?: boolean;
 }
-const SidebarHeader = (props: SidebarHeaderProps) => {
-  const { children, componentClass: Component = 'div', classPrefix = "sidebar-header", className, ...rest } = props;
+const SidebarHeader: React.FC<SidebarHeaderProps> = (
+  props: SidebarHeaderProps
+) => {
+  const {
+    children,
+    componentClass: Component = "div",
+    classPrefix = "sidebar-header",
+    className,
+    expander,
+    handleCollapse,
+    ...rest
+  } = props;
 
-  const {merge, withClassPrefix} = useClassNames(classPrefix)
+  const { merge, withClassPrefix, prefix } = useClassNames(classPrefix);
 
-  const classes = merge(className, withClassPrefix())
+  const classes = merge(className, withClassPrefix());
 
-  return <Component className={classes} {...rest}>{children}</Component>;
+  let expanderElement: React.ReactNode;
+  if (expander) {
+    expanderElement = (
+      <div className={prefix("expander")} onClick={handleCollapse()}>
+        <ExpanderIcon />
+      </div>
+    );
+  }
+
+  return (
+    <Component className={classes} {...rest}>
+      <div className={prefix("logo")}>{children}</div>
+      {expanderElement}
+    </Component>
+  );
 };
 
-SidebarHeader.defualtProps = {
-  componentClass: 'div',
-  classPrefix: 'sidebar-header'
-}
+SidebarHeader.displayName = "SidebarHeader";
+SidebarHeader.defaultProps = {
+  componentClass: "div",
+  classPrefix: "sidebar-header",
+};
 
 export default SidebarHeader;

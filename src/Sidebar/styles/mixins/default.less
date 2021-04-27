@@ -10,6 +10,24 @@
   .sidebar-header();
 }
 
+.@{classPrefix}sidebar-header-expander {
+  display: flex;
+  align-items: center;
+  color: darken(@B000, 20%);
+  cursor: pointer;
+
+  &:hover {
+    color: @B000;
+  }
+}
+
+.@{classPrefix}sidebar-header-logo {
+  display: block;
+  max-width: 120px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 .@{classPrefix}sidebar-scrollable {
   .sidebar-scrollable();
 }
