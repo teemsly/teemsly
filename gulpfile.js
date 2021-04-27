@@ -27,7 +27,7 @@ const LESS_EXTENSION = ["./src/**/*.less"];
 
 // clean the target dir
 function clean(done) {
-  del.sync([ESM_DIR, LIB_DIR, DIST_DIR], { force: true });
+  del.sync([ESM_DIR, LIB_DIR], { force: true });
   done();
 }
 
