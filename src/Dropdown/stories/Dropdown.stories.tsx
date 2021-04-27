@@ -35,6 +35,7 @@ const Template: Story<DropdownProps> = (args) => (
       Dropdown Item 1
     </Dropdown.Item>
     <Dropdown.Item itemKey="key2">Dropdown Item 2</Dropdown.Item>
+    <Dropdown.Divider />
     <Dropdown.Item itemKey="key13">Dropdown Item 3</Dropdown.Item>
   </Dropdown>
 );
