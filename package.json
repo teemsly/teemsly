@@ -27,9 +27,9 @@
   "author": "mrsepdiana",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mrsepdiana/react-library-template/issues"
+    "url": "https://github.com/teemsly/teemsly/issues"
   },
-  "homepage": "https://github.com/mrsepdiana/react-library-template#readme",
+  "homepage": "https://github.com/teemsly/teemsly#readme",
   "files": [
     "dist",
     "lib",
