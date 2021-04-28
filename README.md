@@ -77,7 +77,7 @@ $ npm run storybook
 3. Your show time. Open url http://127.0.0.1:6006/ in browser.
 
 
-## Supporting React Suite
+## Supporting Teemsly
 
 If you like Teemsly Component, you can show your support by contact us on email at [opensource@teemsly.com][email-us]
 
